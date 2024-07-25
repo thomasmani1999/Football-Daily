@@ -31,6 +31,7 @@
 		E9DF63A92C525E01000040FD /* Encodable+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Encodable+Extension.swift"; sourceTree = "<group>"; };
 		E9DF63AD2C526033000040FD /* Endpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoints.swift; sourceTree = "<group>"; };
 		E9DF63AF2C526670000040FD /* CountriesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesResponse.swift; sourceTree = "<group>"; };
+		E9DF63B12C526FC2000040FD /* Football-Daily-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Football-Daily-Info.plist"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +64,7 @@
 		E9DF63902C516DED000040FD /* Football Daily */ = {
 			isa = PBXGroup;
 			children = (
+				E9DF63B12C526FC2000040FD /* Football-Daily-Info.plist */,
 				E9DF63912C516DED000040FD /* Football_DailyApp.swift */,
 				E9DF63AC2C526022000040FD /* Utilities */,
 				E9DF63AB2C526011000040FD /* Models */,
@@ -339,6 +341,7 @@
 				DEVELOPMENT_TEAM = UQFSLKX8TP;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Football-Daily-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -368,6 +371,7 @@
 				DEVELOPMENT_TEAM = UQFSLKX8TP;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Football-Daily-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
