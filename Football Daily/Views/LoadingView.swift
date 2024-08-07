@@ -34,6 +34,7 @@ struct LoadingView: View {
                 isLoading.toggle()
             }
         }
+        .allowsHitTesting(false)
     }
 }
 

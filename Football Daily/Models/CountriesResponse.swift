@@ -28,7 +28,7 @@ struct Country: Codable, Hashable {
     }
     
     func hash(into hasher: inout Hasher) {
-      hasher.combine(code)
+      hasher.combine(id)
     }
 }
 
