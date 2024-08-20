@@ -19,13 +19,11 @@ import Foundation
         let countries = LocalDataManager.shared.readCountriesData()
         if !countries.isEmpty {
             countriesList = countries.sorted(by: { $0.name ?? "" < $1.name ?? ""})
-            selectedCountry = countriesList.first
         } else {
             await APIManager().sendRequest(endpoint: Endpoints.countries.rawValue) { [weak self] (result: Result<CountriesResponse, Error>) in
                 switch result {
                 case .success(let data):
                     self?.countriesList = data.response?.sorted(by: { $0.name ?? "" < $1.name ?? ""}) ?? []
-                    self?.selectedCountry = self?.countriesList.first
                     LocalDataManager.shared.writeCountriesData(countries: self?.countriesList ?? [])
                 case .failure(let error):
                     print("Failed with error: \(error)")
@@ -46,5 +44,11 @@ import Foundation
                 print("Failed with error: \(error)")
             }
         }
+    }
+}
+
+extension SelectTeamViewModel: SearchBarDelegate {
+    func searchFor(text: String) {
+        print(text," ",selectedCountry?.name)
     }
 }

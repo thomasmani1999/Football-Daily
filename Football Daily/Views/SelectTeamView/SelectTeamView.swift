@@ -13,8 +13,10 @@ struct SelectTeamView: View {
     @Binding var isFavTeamSelected: Bool
     @State var isLoading: Bool = false
     @State var isCountrySelected: Bool = false
-    @State var searchTex: String = ""
-    @ObservedObject var viewModel: SelectTeamViewModel = SelectTeamViewModel()
+    @State var isFilterBoxExpanded: Bool = false
+    @StateObject var viewModel: SelectTeamViewModel = SelectTeamViewModel()
+    @State var filterOptions: [String] = []
+    @State var isAnimating = false
     
     var body: some View {
         NavigationStack {
@@ -22,104 +24,95 @@ struct SelectTeamView: View {
                 Rectangle()
                     .fill(.clear)
                 VStack {
+                    SearchBarView(model: viewModel, placeholder: "Teams")
                     
-                    Text("Selected Country")
-                        .font(.system(size: 30))
-                        .fontWeight(.bold)
-                        .fontDesign(.rounded)
-                        .foregroundStyle(.white)
-                        .padding(.bottom, 20)
-                        .animation(.easeIn, value: isCountrySelected)
-                    
-            
-                    if viewModel.selectedCountry != nil {
+                    HStack {
+                        Text("Teams")
+                            .font(.system(size: 20))
+                            .fontWeight(.bold)
+                            .fontDesign(.rounded)
+                            .foregroundStyle(.white)
+                            .padding(.leading, 20)
+                            .animation(.easeIn, value: isCountrySelected)
                         
-                        Group {
-                            WebImage(url: URL(string: viewModel.selectedCountry?.flag ?? ""), context: [.imageThumbnailPixelSize: CGSize.zero])
-                                .resizable()
-                                .scaledToFill()
-                                .shadow(color: .black, radius: 2)
-                                .border(Color.black, width: 1)
-                            
-                            Text(viewModel.selectedCountry?.name ?? "")
-                                .font(.system(size: isCountrySelected ? 15 : 30))
-                                .fontWeight(.bold)
-                                .fontDesign(.rounded)
-                                .foregroundStyle(.white)
-                                .multilineTextAlignment(.center)
-                            
-                            Spacer()
-                        }
-                        .frame(width: isCountrySelected ? 120 : 150, alignment: .center)
-                        .animation(.easeInOut, value: isCountrySelected)
-                        
-                        
-                        if isCountrySelected {
-                            Text("Selected League")
-                                .font(.system(size: 30))
-                                .fontWeight(.bold)
-                                .fontDesign(.rounded)
-                                .foregroundStyle(.white)
-                                .padding(.bottom, 30)
-                            
-                            AsyncImage(url:  URL(string: viewModel.selectedLeague?.league?.logo ?? "")){ result in
-                                result.image?
-                                    .resizable()
-                                    .scaledToFill()
-                                
+                        Spacer()
+                        Button(action: {
+                            filterOptions = ["Country"]
+                            if isCountrySelected {
+                                filterOptions.append("League")
                             }
-                            .frame(width: 200, alignment: .center)
-                            
-                            Text(viewModel.selectedLeague?.league?.name ?? "")
-                                .font(.system(size: 30))
-                                .fontWeight(.bold)
-                                .fontDesign(.rounded)
+                            withAnimation {
+                                isFilterBoxExpanded.toggle()
+                            }
+                        }, label: {
+                            Image(systemName: "line.3.horizontal.decrease.circle")
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width: 25)
+                                .padding(.trailing, 20)
                                 .foregroundStyle(.white)
-                                .multilineTextAlignment(.center)
-                        }
+                        })
+                        .overlay(alignment: .top, content: {
+                            if isFilterBoxExpanded {
+                                VStack(alignment: .trailing,content: {
+                                    ForEach(filterOptions, id: \.self) { value in
+                                        Rectangle()
+                                            .fill(.black)
+                                            .presentationCornerRadius(2)
+                                            .frame(height: 3)
+                                        Button(action: {
+                                            
+                                        }, label: {
+                                            Text(value)
+                                                .foregroundStyle(.black)
+                                                .font(.system(size: 10))
+                                                .fontWeight(.semibold)
+                                                .fontDesign(.rounded)
+                                                .padding(2)
+                                        })
+                                    }
+                                    Rectangle()
+                                        .fill(.black)
+                                        .frame(height: 3)
+                                })
+                                .transition(.opacity)
+                                .padding(5)
+                                .frame(width: 60)
+                                .background(Color.white)
+                                .offset(x: -30, y: 30)
+                            } else if !isCountrySelected {
+                                Image(systemName: "arrow.up")
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fit)
+                                    .frame(width: 30)
+                                    .offset(x: -9.5)
+                                    .foregroundStyle(.white)
+                                    .bold()
+                                    .offset(y: isAnimating ? 40 : 30)
+                                    .symbolEffect(.pulse, options: .repeating.speed(2), value: isAnimating)
+                                    .onAppear() {
+                                        isAnimating.toggle()
+                                    }
+                            }
+                        })
                     }
-                    
-                    
                     
                     Spacer()
                     
-                    if isCountrySelected {
-                        List {
-                            Picker("League", selection: $viewModel.selectedLeague) {
-                                ForEach(viewModel.leagues , id: \.id) { league in
-                                    Text(league.league?.name ?? "")
-                                            .font(.system(size: 30))
-                                            .fontWeight(.bold)
-                                            .fontDesign(.rounded)
-                                            .foregroundStyle(.white)
-                                            .tag(league as? LeagueInfo)
-                                }
-                            }
+                    ZStack {
+                        if !isCountrySelected {
+                            Text("First Select a Country from the filter \n \n Then select a League from the Country")
+                                .multilineTextAlignment(.center)
+                                .font(.system(size: 30))
+                                .fontWeight(.bold)
+                                .fontDesign(.rounded)
+                                .foregroundStyle(.white)
+                                .padding(.leading, 20)
+                                .animation(.easeIn, value: isCountrySelected)
                         }
-                        .scrollDisabled(true)
-                        .scrollContentBackground(.hidden)
-                        .background(.clear)
-                        .frame(height: 110)
-                        .padding(.bottom, 25)
-                    } else {
-                        List {
-                            Picker("Country", selection: $viewModel.selectedCountry) {
-                                ForEach(viewModel.countriesList, id: \.id) { country in
-                                        Text(country.name ?? "")
-                                            .font(.system(size: 30))
-                                            .fontWeight(.bold)
-                                            .fontDesign(.rounded)
-                                            .foregroundStyle(.white)
-                                            .tag(country as? Country)
-                                }
-                            }
-                        }
-                        .scrollDisabled(true)
-                        .scrollContentBackground(.hidden)
-                        .background(.clear)
-                        .frame(height: 110)
-                        .padding(.bottom, 25)
                     }
+                    
+                    Spacer()
                     
                     Button("Next") {
                         if viewModel.selectedCountry != nil {
@@ -137,7 +130,7 @@ struct SelectTeamView: View {
                     .fontWeight(.bold)
                     .fontDesign(.rounded)
                     .foregroundStyle(.white)
-                    .clipShape(Capsule())
+                    .presentationCornerRadius(20)
                     .background(Color.backgroundGrey)
                     .NeumorphicStyle()
                 }
@@ -147,10 +140,6 @@ struct SelectTeamView: View {
                     LoadingView()
                 }
             }
-            .searchable(text: $searchTex)
-            .onChange(of: searchTex, { oldValue, newValue in
-                print("\(oldValue) \(newValue)")
-            })
             .background(Color.backgroundGrey)
             .onAppear(perform: {
                 Task {
