@@ -10,23 +10,22 @@ import SwiftUI
 struct SplashScreen: View {
     
     // MARK: State variables
-    @State var isFavTeamSelected: Bool = false
+    @State var favTeamNotSelected: Bool = true
     
     init() {
         if UserDefaults.standard.string(forKey: "favTeam") != nil {
-            isFavTeamSelected = true
+            favTeamNotSelected = false
         }
     }
     
     var body: some View {
-        if isFavTeamSelected {
+        if !favTeamNotSelected {
             ContentView()
         } else {
             ZStack(content: {
                 Rectangle()
                     .fill(.white)
                     .background(Color.white)
-                
                     
                 HStack(alignment: .top, spacing: 10, content: {
                     
@@ -46,17 +45,8 @@ struct SplashScreen: View {
                     })
                 })
             })
-            .onAppear(perform: {
-                Task {
-                    await APIManager().sendRequest(endpoint: Endpoints.countries.rawValue) { (result: Result<CountriesResponse, Error>) in
-                        switch result {
-                        case .success(let response):
-                            print(response)
-                        case .failure(let error):
-                            print(error)
-                        }
-                    }
-                }
+            .fullScreenCover(isPresented: $favTeamNotSelected, content: {
+                SelectTeamView(isFavTeamSelected: $favTeamNotSelected)
             })
         }
     }

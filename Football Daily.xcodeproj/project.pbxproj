@@ -17,6 +17,17 @@
 		E9DF63AA2C525E01000040FD /* Encodable+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9DF63A92C525E01000040FD /* Encodable+Extension.swift */; };
 		E9DF63AE2C526033000040FD /* Endpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9DF63AD2C526033000040FD /* Endpoints.swift */; };
 		E9DF63B02C526670000040FD /* CountriesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9DF63AF2C526670000040FD /* CountriesResponse.swift */; };
+		E9DF63B42C58143F000040FD /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9DF63B32C58143F000040FD /* LoadingView.swift */; };
+		E9DF63C52C5A395E000040FD /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = E9DF63C42C5A395E000040FD /* SDWebImageSwiftUI */; };
+		E9DF63C82C5A3984000040FD /* SDWebImageSVGCoder in Frameworks */ = {isa = PBXBuildFile; productRef = E9DF63C72C5A3984000040FD /* SDWebImageSVGCoder */; };
+		E9DF63CC2C5A46D5000040FD /* SelectTeamViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9DF63CB2C5A46D5000040FD /* SelectTeamViewModel.swift */; };
+		E9DF63EF2C5E81FE000040FD /* LocalDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9DF63EE2C5E81FE000040FD /* LocalDataManager.swift */; };
+		E9DF63F12C6366D1000040FD /* ColorConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9DF63F02C6366D1000040FD /* ColorConstants.swift */; };
+		E9DF63F32C636968000040FD /* View+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9DF63F22C636968000040FD /* View+Extension.swift */; };
+		E9DF63F52C63720E000040FD /* LeagueResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9DF63F42C63720E000040FD /* LeagueResponse.swift */; };
+		E9DF63F72C63DBAD000040FD /* TeamCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9DF63F62C63DBAC000040FD /* TeamCellView.swift */; };
+		E9DF63F92C65FDB6000040FD /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9DF63F82C65FDB6000040FD /* SearchBarView.swift */; };
+		E9DF63FB2C661CAA000040FD /* DropDownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9DF63FA2C661CAA000040FD /* DropDownView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +42,16 @@
 		E9DF63A92C525E01000040FD /* Encodable+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Encodable+Extension.swift"; sourceTree = "<group>"; };
 		E9DF63AD2C526033000040FD /* Endpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoints.swift; sourceTree = "<group>"; };
 		E9DF63AF2C526670000040FD /* CountriesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesResponse.swift; sourceTree = "<group>"; };
+		E9DF63B12C526FC2000040FD /* Football-Daily-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Football-Daily-Info.plist"; sourceTree = SOURCE_ROOT; };
+		E9DF63B32C58143F000040FD /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		E9DF63CB2C5A46D5000040FD /* SelectTeamViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectTeamViewModel.swift; sourceTree = "<group>"; };
+		E9DF63EE2C5E81FE000040FD /* LocalDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalDataManager.swift; sourceTree = "<group>"; };
+		E9DF63F02C6366D1000040FD /* ColorConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorConstants.swift; sourceTree = "<group>"; };
+		E9DF63F22C636968000040FD /* View+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extension.swift"; sourceTree = "<group>"; };
+		E9DF63F42C63720E000040FD /* LeagueResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeagueResponse.swift; sourceTree = "<group>"; };
+		E9DF63F62C63DBAC000040FD /* TeamCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamCellView.swift; sourceTree = "<group>"; };
+		E9DF63F82C65FDB6000040FD /* SearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
+		E9DF63FA2C661CAA000040FD /* DropDownView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDownView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,6 +59,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E9DF63C52C5A395E000040FD /* SDWebImageSwiftUI in Frameworks */,
+				E9DF63C82C5A3984000040FD /* SDWebImageSVGCoder in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,7 +86,9 @@
 		E9DF63902C516DED000040FD /* Football Daily */ = {
 			isa = PBXGroup;
 			children = (
+				E9DF63B12C526FC2000040FD /* Football-Daily-Info.plist */,
 				E9DF63912C516DED000040FD /* Football_DailyApp.swift */,
+				E9DF63CA2C5A46C5000040FD /* ViewModel */,
 				E9DF63AC2C526022000040FD /* Utilities */,
 				E9DF63AB2C526011000040FD /* Models */,
 				E9DF63A82C525DF0000040FD /* Extensions */,
@@ -86,9 +111,12 @@
 		E9DF639F2C516F01000040FD /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				E9DF63A02C516F25000040FD /* SelectTeamView.swift */,
+				E9DF63C92C5A46B8000040FD /* SelectTeamView */,
 				E9DF63932C516DED000040FD /* ContentView.swift */,
 				E9DF63A22C516FD5000040FD /* SplashScreen.swift */,
+				E9DF63B32C58143F000040FD /* LoadingView.swift */,
+				E9DF63F82C65FDB6000040FD /* SearchBarView.swift */,
+				E9DF63FA2C661CAA000040FD /* DropDownView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -105,6 +133,7 @@
 			isa = PBXGroup;
 			children = (
 				E9DF63A92C525E01000040FD /* Encodable+Extension.swift */,
+				E9DF63F22C636968000040FD /* View+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -113,6 +142,7 @@
 			isa = PBXGroup;
 			children = (
 				E9DF63AF2C526670000040FD /* CountriesResponse.swift */,
+				E9DF63F42C63720E000040FD /* LeagueResponse.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -121,8 +151,27 @@
 			isa = PBXGroup;
 			children = (
 				E9DF63AD2C526033000040FD /* Endpoints.swift */,
+				E9DF63EE2C5E81FE000040FD /* LocalDataManager.swift */,
+				E9DF63F02C6366D1000040FD /* ColorConstants.swift */,
 			);
 			path = Utilities;
+			sourceTree = "<group>";
+		};
+		E9DF63C92C5A46B8000040FD /* SelectTeamView */ = {
+			isa = PBXGroup;
+			children = (
+				E9DF63A02C516F25000040FD /* SelectTeamView.swift */,
+				E9DF63F62C63DBAC000040FD /* TeamCellView.swift */,
+			);
+			path = SelectTeamView;
+			sourceTree = "<group>";
+		};
+		E9DF63CA2C5A46C5000040FD /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				E9DF63CB2C5A46D5000040FD /* SelectTeamViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -141,6 +190,10 @@
 			dependencies = (
 			);
 			name = "Football Daily";
+			packageProductDependencies = (
+				E9DF63C42C5A395E000040FD /* SDWebImageSwiftUI */,
+				E9DF63C72C5A3984000040FD /* SDWebImageSVGCoder */,
+			);
 			productName = "Football Daily";
 			productReference = E9DF638E2C516DED000040FD /* Football Daily.app */;
 			productType = "com.apple.product-type.application";
@@ -169,6 +222,10 @@
 				Base,
 			);
 			mainGroup = E9DF63852C516DED000040FD;
+			packageReferences = (
+				E9DF63C32C5A395E000040FD /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
+				E9DF63C62C5A3984000040FD /* XCRemoteSwiftPackageReference "SDWebImageSVGCoder" */,
+			);
 			productRefGroup = E9DF638F2C516DED000040FD /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -198,11 +255,20 @@
 				E9DF63A32C516FD5000040FD /* SplashScreen.swift in Sources */,
 				E9DF63942C516DED000040FD /* ContentView.swift in Sources */,
 				E9DF63A72C517842000040FD /* APIManger.swift in Sources */,
+				E9DF63F12C6366D1000040FD /* ColorConstants.swift in Sources */,
+				E9DF63F92C65FDB6000040FD /* SearchBarView.swift in Sources */,
+				E9DF63F72C63DBAD000040FD /* TeamCellView.swift in Sources */,
+				E9DF63FB2C661CAA000040FD /* DropDownView.swift in Sources */,
 				E9DF63AE2C526033000040FD /* Endpoints.swift in Sources */,
+				E9DF63EF2C5E81FE000040FD /* LocalDataManager.swift in Sources */,
 				E9DF63A12C516F25000040FD /* SelectTeamView.swift in Sources */,
 				E9DF63B02C526670000040FD /* CountriesResponse.swift in Sources */,
 				E9DF63922C516DED000040FD /* Football_DailyApp.swift in Sources */,
 				E9DF63AA2C525E01000040FD /* Encodable+Extension.swift in Sources */,
+				E9DF63F32C636968000040FD /* View+Extension.swift in Sources */,
+				E9DF63F52C63720E000040FD /* LeagueResponse.swift in Sources */,
+				E9DF63B42C58143F000040FD /* LoadingView.swift in Sources */,
+				E9DF63CC2C5A46D5000040FD /* SelectTeamViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -339,6 +405,7 @@
 				DEVELOPMENT_TEAM = UQFSLKX8TP;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Football-Daily-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -368,6 +435,7 @@
 				DEVELOPMENT_TEAM = UQFSLKX8TP;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Football-Daily-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -408,6 +476,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		E9DF63C32C5A395E000040FD /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImageSwiftUI.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.1.1;
+			};
+		};
+		E9DF63C62C5A3984000040FD /* XCRemoteSwiftPackageReference "SDWebImageSVGCoder" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImageSVGCoder";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.7.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		E9DF63C42C5A395E000040FD /* SDWebImageSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E9DF63C32C5A395E000040FD /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
+			productName = SDWebImageSwiftUI;
+		};
+		E9DF63C72C5A3984000040FD /* SDWebImageSVGCoder */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E9DF63C62C5A3984000040FD /* XCRemoteSwiftPackageReference "SDWebImageSVGCoder" */;
+			productName = SDWebImageSVGCoder;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = E9DF63862C516DED000040FD /* Project object */;
 }

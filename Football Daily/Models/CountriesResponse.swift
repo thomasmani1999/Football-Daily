@@ -7,7 +7,8 @@
 
 import Foundation
 
-struct Response: Codable {
+struct Country: Codable, Hashable {
+    let id: UUID = UUID()
     let name : String?
     let code : String?
     let flag : String?
@@ -25,11 +26,15 @@ struct Response: Codable {
         code = try values.decodeIfPresent(String.self, forKey: .code)
         flag = try values.decodeIfPresent(String.self, forKey: .flag)
     }
+    
+    func hash(into hasher: inout Hasher) {
+      hasher.combine(id)
+    }
 }
 
 struct CountriesResponse: Codable {
     let results : Int?
-    let response : [Response]?
+    let response : [Country]?
 
     enum CodingKeys: String, CodingKey {
 
@@ -40,7 +45,7 @@ struct CountriesResponse: Codable {
     init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         results = try values.decodeIfPresent(Int.self, forKey: .results)
-        response = try values.decodeIfPresent([Response].self, forKey: .response)
+        response = try values.decodeIfPresent([Country].self, forKey: .response)
     }
 
 }

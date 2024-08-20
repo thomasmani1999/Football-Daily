@@ -9,7 +9,7 @@ import Foundation
 
 class APIManager {
     private let baseUrl = "https://v3.football.api-sports.io/"
-    private let apiKey = "e3c7913f3c042734478ac160fa691f9b"
+    private let apiKey = Bundle.main.infoDictionary?["API_KEY"]  as? String ?? ""
     private let host = "v3.football.api-sports.io"
     
     func sendRequest<T: Codable, U: Codable>(endpoint: String, parameters: T, completion: @escaping (Result<U, Error>) -> Void) async {

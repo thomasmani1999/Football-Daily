@@ -8,5 +8,6 @@
 import Foundation
 
 enum Endpoints: String {
-    case countries
+    case countries = "countries"
+    case leagues = "leagues"
 }

@@ -7,90 +7,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "493403BF-587F-4B0B-82CD-D9DA4C3B03BE"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Football Daily/Views/SplashScreen.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "51"
-            endingLineNumber = "51"
-            landmarkName = "body"
-            landmarkType = "24">
-            <Locations>
-               <Location
-                  uuid = "493403BF-587F-4B0B-82CD-D9DA4C3B03BE - 31ec0d50e37e4179"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(1) suspend resume partial function for closure #1 @Sendable () async -&gt; () in closure #2 () -&gt; () in Football_Daily.SplashScreen.body.getter : some"
-                  moduleName = "Football Daily"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/thomas/My%20Apps/Football%20Daily/Football%20Daily/Views/SplashScreen.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "51"
-                  endingLineNumber = "51">
-               </Location>
-               <Location
-                  uuid = "493403BF-587F-4B0B-82CD-D9DA4C3B03BE - 473ff6fa9fec9dd0"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(2) await resume partial function for closure #1 @Sendable () async -&gt; () in closure #2 () -&gt; () in Football_Daily.SplashScreen.body.getter : some"
-                  moduleName = "Football Daily"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/thomas/My%20Apps/Football%20Daily/Football%20Daily/Views/SplashScreen.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "51"
-                  endingLineNumber = "51">
-               </Location>
-               <Location
-                  uuid = "493403BF-587F-4B0B-82CD-D9DA4C3B03BE - 2b6fac21d9379d77"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(3) suspend resume partial function for closure #1 @Sendable () async -&gt; () in closure #2 () -&gt; () in Football_Daily.SplashScreen.body.getter : some"
-                  moduleName = "Football Daily"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/thomas/My%20Apps/Football%20Daily/Football%20Daily/Views/SplashScreen.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "51"
-                  endingLineNumber = "51">
-               </Location>
-               <Location
-                  uuid = "493403BF-587F-4B0B-82CD-D9DA4C3B03BE - b3579b7f0934d0ad"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Result&lt;Football_Daily.CountriesResponse, Swift.Error&gt;) -&gt; () in closure #1 @Sendable () async -&gt; () in closure #2 () -&gt; () in Football_Daily.SplashScreen.body.getter : some"
-                  moduleName = "Football Daily"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/thomas/My%20Apps/Football%20Daily/Football%20Daily/Views/SplashScreen.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "53"
-                  endingLineNumber = "53">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "4121C64D-9D6F-4242-BE61-43F6FDC5EF4A"
+            uuid = "46FBBD33-D63C-45EA-AABB-EB764B9B59AC"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Football Daily/Manager/APIManger.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "64"
-            endingLineNumber = "64"
-            landmarkName = "sendRequest(endpoint:completion:)"
+            startingLineNumber = "38"
+            endingLineNumber = "38"
+            landmarkName = "sendRequest(endpoint:parameters:completion:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
