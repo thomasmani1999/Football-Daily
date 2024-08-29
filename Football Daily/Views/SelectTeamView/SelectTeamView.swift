@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import SDWebImageSwiftUI
 
 struct SelectTeamView: View {
     
@@ -17,6 +16,7 @@ struct SelectTeamView: View {
     @StateObject var viewModel: SelectTeamViewModel = SelectTeamViewModel()
     @State var filterOptions: [String] = []
     @State var isAnimating = false
+    @State var presentSheet = false
     
     var body: some View {
         NavigationStack {
@@ -38,7 +38,7 @@ struct SelectTeamView: View {
                         Spacer()
                         Button(action: {
                             filterOptions = ["Country"]
-                            if isCountrySelected {
+                            if viewModel.selectedCountry != nil {
                                 filterOptions.append("League")
                             }
                             withAnimation {
@@ -58,10 +58,15 @@ struct SelectTeamView: View {
                                     ForEach(filterOptions, id: \.self) { value in
                                         Rectangle()
                                             .fill(.black)
-                                            .presentationCornerRadius(2)
                                             .frame(height: 3)
                                         Button(action: {
-                                            
+                                            isFilterBoxExpanded = false
+                                            presentSheet = true
+                                            if value == "Country" {
+                                                isCountrySelected = true
+                                            } else {
+                                                isCountrySelected = false
+                                            }
                                         }, label: {
                                             Text(value)
                                                 .foregroundStyle(.black)
@@ -80,7 +85,7 @@ struct SelectTeamView: View {
                                 .frame(width: 60)
                                 .background(Color.white)
                                 .offset(x: -30, y: 30)
-                            } else if !isCountrySelected {
+                            } else if viewModel.selectedLeague == nil {
                                 Image(systemName: "arrow.up")
                                     .resizable()
                                     .aspectRatio(contentMode: .fit)
@@ -100,8 +105,8 @@ struct SelectTeamView: View {
                     Spacer()
                     
                     ZStack {
-                        if !isCountrySelected {
-                            Text("First Select a Country from the filter \n \n Then select a League from the Country")
+                        if viewModel.selectedLeague == nil {
+                            Text("First Select a Country from the filter \n \n Then select a League from that Country")
                                 .multilineTextAlignment(.center)
                                 .font(.system(size: 30))
                                 .fontWeight(.bold)
@@ -119,12 +124,11 @@ struct SelectTeamView: View {
                             Task {
                                 isLoading = true
                                 await viewModel.getLeagues()
-                                isCountrySelected = true
                                 isLoading = false
                             }
                         }
                     }
-                    .disabled(!(viewModel.selectedCountry != nil))
+                    .disabled(viewModel.selectedCountry == nil)
                     .padding()
                     .font(.system(size: 20))
                     .fontWeight(.bold)
@@ -133,6 +137,7 @@ struct SelectTeamView: View {
                     .presentationCornerRadius(20)
                     .background(Color.backgroundGrey)
                     .NeumorphicStyle()
+                    .padding(.bottom,25)
                 }
                 .blur(radius: isLoading ? 5 : 0)
                 
@@ -147,7 +152,11 @@ struct SelectTeamView: View {
                     await viewModel.getCountries()
                     isLoading = false
                 }
-        })
+            })
+            .sheet(isPresented: $presentSheet) {
+                SelectCountryLeagueView(viewModel: viewModel, presentSheet: $presentSheet, isCountrySelected: isCountrySelected)
+            }
+            .presentationDetents([.medium, .large])
         }
     }
 }

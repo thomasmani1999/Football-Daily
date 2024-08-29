@@ -13,7 +13,24 @@ import Foundation
     @Published var selectedLeague: LeagueInfo?
     @Published var countriesList: [Country] = []
     @Published var leagues: [LeagueInfo] = []
+    @Published var countrySearchTerm: String = ""
+    @Published var leagueSearchTerm: String = ""
     
+    var filteredCountryList: [Country] {
+        if countrySearchTerm.isEmpty {
+            return countriesList
+        } else {
+            return countriesList.filter {  $0.name?.contains(countrySearchTerm) ?? false }
+        }
+    }
+    
+    var filteredLeaguesList: [LeagueInfo] {
+        if leagueSearchTerm.isEmpty {
+            return leagues
+        } else {
+            return leagues.filter {  $0.league?.name?.contains(leagueSearchTerm) ?? false }
+        }
+    }
     
     func getCountries() async {
         let countries = LocalDataManager.shared.readCountriesData()
@@ -49,6 +66,6 @@ import Foundation
 
 extension SelectTeamViewModel: SearchBarDelegate {
     func searchFor(text: String) {
-        print(text," ",selectedCountry?.name)
+        
     }
 }
