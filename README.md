@@ -1,0 +1,1 @@
+This is a personal project marrying two of my favourite interests, Football and Software Development. This is developed using SwiftUI from the ground up and also represents my foray into learning SwiftUI.If by any chance anyone wants to contribute feel free to do so
